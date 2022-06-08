@@ -65,6 +65,9 @@ body {
 .mr-2 {
     margin-right: 2rem !important;
 }
+.cursor-pointer {
+    cursor: pointer !important;
+}
 /* Button */
 button.btn.btn-primary {
     background: #04353C;
@@ -105,9 +108,11 @@ section .header {
 }
 .weather-form .form-group input {
     height: 70px;
-    padding: 15px 80px 15px 120px;
+    padding: 15px 120px 15px 80px;
 }
-
+.weather-form .form-group input.form-control::placeholder {
+    font-size: 18px;
+}
 .weather-form .form-group .buttons {
     position: absolute;
     top: 15%;
