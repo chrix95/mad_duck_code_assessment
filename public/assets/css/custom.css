@@ -202,6 +202,11 @@ section .header {
 .temperture-group-item img {
     width: 50%;
 }
+.back-image-icon {
+    background: #ffffff;
+    border: 1px solid #cfddf6;
+    border-radius: 50%;
+}
 /* Footer section */
 footer {
     background: #04353C;
