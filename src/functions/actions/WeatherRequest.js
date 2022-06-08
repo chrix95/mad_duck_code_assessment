@@ -1,5 +1,6 @@
 import store from "../../store";
 import WeatherService from "@/services/WeatherService";
+import globalFunc from "@/functions/globalFunc";
 
 export default {
   addCity(credentials) {
@@ -10,7 +11,7 @@ export default {
           const { success, error: { info } } = result.data;
           return { status: success, message: info };
         } else {
-          store.dispatch("setCities", result.data);
+          store.dispatch("setCities", { ...result.data, id: globalFunc.generateUuid() });
           return { status: true };
         }
       })

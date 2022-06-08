@@ -1,5 +1,4 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import store from "../store";
 import PageLayout from '@/layout/PageLayout.vue'
 import HomeView from '@/views/HomeView.vue'
 
@@ -15,12 +14,13 @@ const routes = [
         alias: '/home',
         meta: { pageTitle: 'Home' }
       },
-      // {
-      //     path: '/register',
-      //     name: 'Register',
-      //     component: require('../views/RegisterView.vue').default,
-      //     meta: { pageTitle: 'Register' }
-      //   },
+      {
+        path: '/temperature/:city/:id',
+        name: 'TemperatureInfo',
+        component: require('../views/TemperatureView.vue').default,
+        props: true,
+        meta: { pageTitle: 'Temperature Information' }
+      },
     ]
   },
   { path: '/:pathMatch(.*)*', beforeEnter: (to, from, next) => { next('/404') } },

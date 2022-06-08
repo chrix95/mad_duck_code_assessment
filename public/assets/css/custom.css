@@ -134,13 +134,17 @@ section .header {
     color: #FFF;
 }
 /* Weather Card */
+.sub-card-title span {
+    font-weight: 500;
+}
+/* Weather Card */
 .weather-list {
     margin: 5rem auto;
 }
 .weather-card {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 10px;
-    padding: 40px 30px;
+    padding: 40px 30px 20px;
     min-width: 17%;
 }
 .weather-card .card-title {

@@ -5,7 +5,7 @@
     <p class="temperature text-primary">
       {{ city.current && city.current.temperature}}<sup>o</sup>C
     </p>
-    <button class="btn btn-primary">View City</button>
+    <button type="button" class="btn btn-primary" @click.prevent="viewMoreInfo()">View City</button>
   </div>
 </template>
 <script>
@@ -18,6 +18,17 @@ export default {
     },
   },
   components: { },
+  methods: {
+    viewMoreInfo() {
+      this.$router.push({
+        name: "TemperatureInfo",
+        params: {
+          city: (this.city.location.name).toLowerCase(),
+          id: this.city.id,
+        },
+      });
+    },
+  },
 };
 </script>
 <style scoped>

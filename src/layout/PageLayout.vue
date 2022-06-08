@@ -4,7 +4,9 @@
       <div class="row justify-content-start">
         <div class="col">
           <div class="header">
-            <img src="@/assets/img/logo.png" alt="logo icon" class="img-fluid">
+            <router-link to="/">
+              <img src="@/assets/img/logo.png" alt="logo icon" class="img-fluid">
+            </router-link>
           </div>
         </div>
       </div>
