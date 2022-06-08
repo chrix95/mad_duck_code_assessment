@@ -94,6 +94,12 @@ button.btn.btn-primary {
 .f24 {
     font-size: 24px;
 }
+.fw-300 {
+    font-weight: 300;
+}
+.fw-500 {
+    font-weight: 500;
+}
 /* Parent Page */
 section.content {
     background-size: cover !important;
@@ -159,6 +165,21 @@ section .header {
 }
 .weather-card button.btn.btn-primary.view-city {
     width: 75%;
+}
+/* Temperature view */
+.temperature-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.temperture-group-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.temperture-group-item img {
+    width: 50%;
 }
 /* Footer section */
 footer {
