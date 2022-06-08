@@ -15,8 +15,8 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: darkgrey;
-    outline: 1px solid slategrey;
+    background-color: red;
+    outline: 1px solid blue;
 }
 .mx-auto {
     margin: auto !important;
