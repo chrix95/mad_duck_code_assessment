@@ -1,6 +1,8 @@
 <template>
   <notifications />
-  <router-view></router-view>
+  <div class="parent-background">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
@@ -19,4 +21,7 @@ export default {
 </script>
 
 <style>
+.parent-background {
+  background-color: #5C979B;
+}
 </style>

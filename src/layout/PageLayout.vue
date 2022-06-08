@@ -1,5 +1,16 @@
 <template>
-  <router-view></router-view>
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row justify-content-start">
+        <div class="col">
+          <div class="header">
+            <img src="@/assets/img/logo.svg" alt="logo icon" class="img-fluid">
+          </div>
+        </div>
+      </div>
+      <router-view></router-view>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -10,4 +21,7 @@ export default {
 </script>
 
 <style scoped>
+section.content {
+  background: url("@/assets/img/background.png") no-repeat center center;
+}
 </style>

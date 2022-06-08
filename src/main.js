@@ -6,7 +6,6 @@ import router from "./router";
 import store from "./store";
 import globalFunc from "@/functions/globalFunc";
 import Notifications from '@kyvg/vue3-notification';
-import InitiateProfileRequest from "./functions/actions/DashboardRequest";
 
 const app = createApp({
   async created() {

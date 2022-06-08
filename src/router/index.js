@@ -15,6 +15,12 @@ const routes = [
         alias: '/home',
         meta: { pageTitle: 'Home' }
       },
+      // {
+      //     path: '/register',
+      //     name: 'Register',
+      //     component: require('../views/RegisterView.vue').default,
+      //     meta: { pageTitle: 'Register' }
+      //   },
     ]
   },
   { path: '/:pathMatch(.*)*', beforeEnter: (to, from, next) => { next('/404') } },
