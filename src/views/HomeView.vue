@@ -13,13 +13,17 @@
         </div>
       </form>
     </div>
+    <div class="col-lg-10">
+      <Weather-List />
+    </div>
   </div>
 </template>
 
 <script>
+import WeatherList from "@/components/WeatherList.vue";
 export default {
   name: "HomeView",
-  components: {},
+  components: { WeatherList },
   data() {
     return {};
   },

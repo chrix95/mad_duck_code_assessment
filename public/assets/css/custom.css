@@ -65,7 +65,22 @@ body {
 .mr-2 {
     margin-right: 2rem !important;
 }
+/* Button */
+button.btn.btn-primary {
+    background: #04353C;
+    font-size: 14px;
+}
+/* Colors */
+.text-primary {
+    color: #04353C !important;
+}
+.text-grey {
+    color: #707070 !important;
+}
 /* Fonts */
+.f14 {
+    font-size: 14px;
+}
 .f16 {
     font-size: 16px;
 }
@@ -108,6 +123,27 @@ section .header {
     border-radius: 10px;
     padding: 13px 25px;
     color: #FFF;
+}
+/* Weather Card */
+.weather-list {
+    margin-top: 5rem;
+}
+.weather-card {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    padding: 40px 30px;
+    min-width: 15%;
+    margin: auto;
+}
+.weather-card .card-title {
+    font-weight: 600;
+    font-size: 24px;
+    opacity: 1;
+}
+.weather-card .temperature {
+    font-size: 40px;
+    font-weight: 600;
+    margin: 20px auto;
 }
 /* Footer section */
 footer {
