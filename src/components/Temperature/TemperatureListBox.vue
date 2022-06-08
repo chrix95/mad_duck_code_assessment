@@ -1,5 +1,5 @@
 <template>
-  <div class="temperture-group-item mb-1">
+  <div class="temperture-group-item">
     <p class="sub-card-title text-primary f14 fw-normal m-0 text-center mb_5">
       00h
     </p>

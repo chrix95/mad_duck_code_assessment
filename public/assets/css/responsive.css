@@ -36,6 +36,12 @@
     .weather-card {
         min-width: 45%;   
     }
+    .weather-card .center-card img {
+        margin: unset;
+    }
+    .weather-card .center-card {
+        text-align: left;
+    }
     .weather-list {
         justify-content: center !important;
     }

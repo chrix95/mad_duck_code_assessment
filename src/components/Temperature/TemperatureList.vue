@@ -1,9 +1,7 @@
 <template>
-  <div class="col-lg-12">
-    <p class="sub-card-title text-primary f16 fw-bold m-0">Thursday, Apr 07</p>
-    <div class="temperature-group gap-2">
-        <Temperature-List-Box v-for="num in 24" :key="num" />
-    </div>
+  <p class="sub-card-title text-primary f16 fw-bold m-0">Thursday, Apr 07</p>
+  <div class="temperature-group mt_5 gap-3">
+    <Temperature-List-Box v-for="num in 24" :key="num" />
   </div>
 </template>
 <script>
@@ -16,5 +14,4 @@ export default {
 };
 </script>
 <style scoped>
-    
 </style>

@@ -1,7 +1,9 @@
 <template>
   <div class="weather-card mb-3">
     <div class="row justify-content-between align-items-start">
-      <Temperature-List v-for="num in 3" :key="num" />
+      <div class="col-lg-12" v-for="num in 3" :key="num">
+        <Temperature-List />
+      </div>
     </div>
   </div>
 </template>
