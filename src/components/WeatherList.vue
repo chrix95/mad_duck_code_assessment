@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-wrap justify-content-center align-content-around gap-3 weather-list">
+  <div class="d-flex flex-wrap justify-content-start align-content-around gap-3 weather-list">
     <Weather-Card v-for="city in cities" :key="city" :city="city" />
   </div>
 </template>

@@ -4,6 +4,7 @@
 }
 body {
     font-family: "Poppins", sans-serif;
+    min-width: 480px;
 }
 .mx-auto {
     margin: auto !important;
@@ -95,11 +96,15 @@ button.btn.btn-primary {
 }
 /* Parent Page */
 section.content {
-    height: 100vh;
+    background-size: cover !important;
+    padding-bottom: 15%;
+    background-repeat: no-repeat !important;
+    background-position: bottom right !important;
+    height: auto;
     position: relative;
 }
 section .header {
-    padding: 20px;
+    padding: 20px 0px;
 }
 /* Homepage */
 .weather-form .form-group {
@@ -131,13 +136,13 @@ section .header {
 }
 /* Weather Card */
 .weather-list {
-    margin-top: 5rem;
+    margin: 5rem auto;
 }
 .weather-card {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 10px;
     padding: 40px 30px;
-    min-width: 15%;
+    min-width: 17%;
 }
 .weather-card .card-title {
     font-weight: 600;
@@ -148,6 +153,9 @@ section .header {
     font-size: 40px;
     font-weight: 600;
     margin: 20px auto;
+}
+.weather-card button.btn.btn-primary.view-city {
+    width: 75%;
 }
 /* Footer section */
 footer {

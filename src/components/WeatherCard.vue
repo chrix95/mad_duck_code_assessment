@@ -5,7 +5,7 @@
     <p class="temperature text-primary">
       {{ city.current && city.current.temperature}}<sup>o</sup>C
     </p>
-    <button class="btn btn-primary w-75">View City</button>
+    <button class="btn btn-primary">View City</button>
   </div>
 </template>
 <script>
