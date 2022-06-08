@@ -66,6 +66,9 @@ body {
     margin-right: 2rem !important;
 }
 /* Fonts */
+.f16 {
+    font-size: 16px;
+}
 .f18 {
     font-size: 18px;
 }
@@ -76,7 +79,6 @@ body {
 section.content {
     height: 100vh;
     position: relative;
-    padding: 0 50px;
 }
 section .header {
     padding: 20px;
@@ -106,4 +108,11 @@ section .header {
     border-radius: 10px;
     padding: 13px 25px;
     color: #FFF;
+}
+/* Footer section */
+footer {
+    background: #04353C;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
