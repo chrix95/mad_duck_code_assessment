@@ -1,7 +1,9 @@
 <template>
   <div class="row justify-content-start mt-2 mb-1">
     <div class="col-lg-12">
-      <img src="@/assets/img/icons/bi_arrow-left-short.svg" alt="back icon" class="img-fluid mx-auto mb-1 back-image-icon">
+      <router-link to="/">
+        <img src="@/assets/img/icons/bi_arrow-left-short.svg" alt="back icon" class="img-fluid mx-auto mb-1 back-image-icon">
+      </router-link>
     </div>
     <div class="col-lg-6">
       <Top-Card :info="topParams" />
