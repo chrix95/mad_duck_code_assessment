@@ -6,9 +6,9 @@
       <form action="" class="weather-form mt-5" @submit.prevent="handleSubmit()">
         <div class="form-group">
           <img src="@/assets/img/icons/icon-plus.svg" alt="add icon" class="buttons add-icon">
-          <input type="text" class="form-control" placeholder="Add a city..." v-model="city" />
-          <button class="btn add-city buttons cursor-pointer">
-            Add
+          <input type="text" class="form-control" placeholder="Add a city..." :disabled="getCityCount == 5" v-model="city" />
+          <button class="btn add-city buttons cursor-pointer" :disabled="loading || getCityCount == 5">
+            {{ !loading ? `Add` : `Please wait...` }}
           </button>
         </div>
       </form>
@@ -20,9 +20,15 @@
 </template>
 
 <script>
+import { mapGetters, mapState } from 'vuex';
 import WeatherList from "@/components/WeatherList.vue";
+import WeatherHelper from "@/functions/actions/WeatherRequest"
 export default {
   name: "HomeView",
+  computed: {
+    ...mapState(["loading"]),
+    ...mapGetters(["getCityCount"]),
+  },
   components: { WeatherList },
   data() {
     return {
@@ -30,9 +36,27 @@ export default {
     };
   },
   methods: {
-    handleSubmit() {
-      console.log("submit");
-    }
+    async handleSubmit() {
+      if (this.city) {
+        const payload = this.$globalFunc.addApiKey({ query: this.city });
+        const response = await WeatherHelper.addCity(payload);
+        if (response.status) {
+          this.showAlert("Success", `${this.$globalFunc.capitalizeFirstLetter(this.city)} has been added.`, "success");
+          this.city = "";
+        } else {
+          this.showAlert("Error", `${response.message}`, "error");
+        }
+      } else {
+        this.showAlert("Validation Error", "Please enter a city name.", "warn");
+      }
+    },
+    showAlert(title, text, type) {
+      this.$notify({
+        title,
+        text,
+        type: type ? type : "warn",
+      });
+    },
   },
 };
 </script>
