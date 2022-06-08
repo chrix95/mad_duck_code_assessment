@@ -97,10 +97,9 @@ button.btn.btn-primary {
 /* Parent Page */
 section.content {
     background-size: cover !important;
-    padding-bottom: 15%;
     background-repeat: no-repeat !important;
     background-position: bottom right !important;
-    height: auto;
+    height: 100vh;
     position: relative;
 }
 section .header {
@@ -162,5 +161,6 @@ footer {
     background: #04353C;
     position: fixed;
     bottom: 0;
-    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
 }

@@ -26,5 +26,7 @@ export default {
 .parent-background {
   background-color: #5C979B;
   position: relative;
+  height: 100%;
+  width: 100%;
 }
 </style>
