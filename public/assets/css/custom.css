@@ -162,8 +162,11 @@ section .header {
 .weather-card {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 10px;
-    padding: 40px 30px 20px;
+    padding: 40px 30px;
     min-width: 17%;
+}
+.weather-card.lower-padding {
+    padding: 30px 30px 20px;
 }
 .weather-card .card-title {
     font-weight: 600;

@@ -1,5 +1,5 @@
 <template>
-  <div class="weather-card">
+  <div class="weather-card lower-padding">
     <div class="row justify-content-between align-items-start">
       <div class="col-12 col-md-4 col-lg-4 mb-1">
         <div class="left-card mb-2">
