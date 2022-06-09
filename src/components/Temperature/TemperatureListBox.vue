@@ -24,8 +24,8 @@ export default {
   },
   computed: {
     getNum() {
-      return this.item.datetime.substr(0, 2) < 1
-        ? `0${this.item.datetime.substr(0, 2)}`
+      return this.item.datetime.substr(0, 2) > 0 && this.item.datetime.substr(0, 2) < "10"
+        ? `${this.item.datetime.substr(1, 1)}`
         : this.item.datetime.substr(0, 2);
     },
     getRandomTemp() {

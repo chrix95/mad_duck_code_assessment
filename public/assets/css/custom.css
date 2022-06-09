@@ -206,7 +206,7 @@ section .header {
 .temperature-group::-webkit-scrollbar {
     width: 12px;
     background-color: #F5F5F5;
-    height: 6px;
+    height: 8px;
 }
 .temperature-group::-webkit-scrollbar-thumb {
     border-radius: 10px;
