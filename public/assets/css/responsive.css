@@ -1,6 +1,6 @@
 @media (min-width: 1199px) {
     section.content {
-        padding-bottom: 10%;
+        padding-bottom: 23%;
         height: 100%;
     }
 }
@@ -12,8 +12,8 @@
 }
 @media (min-width: 768px) and (max-width: 991px) {
     section.content {
-        padding-bottom: 15%;
-        height: 100vh;
+        padding-bottom: 25%;
+        height: 100%;
     }
     .weather-card {
         min-width: 30%;   
