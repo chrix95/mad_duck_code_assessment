@@ -1,7 +1,7 @@
 <template>
   <p class="sub-card-title text-primary f16 fw-bold m-0">{{ day.datetime && $globalFunc.convertDateTimetoHuman(day.datetime) }}</p>
-  <div class="temperature-group mt_5 gap-3">
-    <!-- <Temperature-List-Box v-for="(day) in 24" :key="num" :temp="num"/> -->
+  <div class="temperature-group mt_5 mb-1 gap-2">
+    <Temperature-List-Box v-for="(day, index) in getHours" :key="index" :item="day"/>
   </div>
 </template>
 <script>
@@ -17,6 +17,11 @@ export default {
       required: true,
     },
   },
+  computed: {
+    getHours() {
+      return this.day && this.day.hours;
+    },
+  }
 };
 </script>
 <style scoped>

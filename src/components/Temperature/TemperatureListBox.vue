@@ -8,7 +8,7 @@
       alt="weather icon"
       class="img-fluid d-flex mx-auto mb_5"
     />
-    <p class="sub-card-title text-primary fw-bold f14 text-center">
+    <p class="sub-card-title text-primary fw-bold f12 text-center m-0 mb_5">
       {{ getRandomTemp }}<sup>o</sup>C
     </p>
   </div>
@@ -17,17 +17,19 @@
 export default {
   name: "TemperatureListBox",
   props: {
-    num: {
-      type: [Number, String],
+    item: {
+      type: [Object],
       required: true,
     },
   },
   computed: {
     getNum() {
-      return this.num - 1 < 1 ? `0${this.num - 1}` : this.num - 1;
+      return this.item.datetime.substr(0, 2) < 1
+        ? `0${this.item.datetime.substr(0, 2)}`
+        : this.item.datetime.substr(0, 2);
     },
     getRandomTemp() {
-      return Math.floor(Math.random() * (30 - 20) + 20);
+      return this.item.temp;
     },
   },
 };

@@ -94,6 +94,9 @@ button.btn.btn-primary {
     color: #707070 !important;
 }
 /* Fonts */
+.f12 {
+    font-size: 12px;
+}
 .f14 {
     font-size: 14px;
 }
@@ -193,8 +196,22 @@ section .header {
     justify-content: space-between;
     margin-top: 1rem;
     max-width: 100%;
-    overflow: hidden;
-    overflow-x: scroll;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+.temperature-group::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+.temperature-group::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+    height: 6px;
+}
+.temperature-group::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 2px #5D979B;
+    background-color: #5D979B;
 }
 .temperture-group-item {
     display: flex;
