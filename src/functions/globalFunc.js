@@ -20,7 +20,7 @@ export default {
       contentType: "json",
     };
     if (withHours) {
-      params.include = "current%2Chours"
+      params.include = "current,hours"
     } else {
       params.include = "current"
     }
@@ -29,5 +29,14 @@ export default {
   getNextNDate(num = 0) {
     var nowDate = new Date();
     return `${nowDate.getFullYear()}-${nowDate.getMonth() + 1}-${nowDate.getDate() + num}`;
+  },
+  convertDateTimetoHuman (date) {
+    let dateTime = new Date(date);
+    let dateHuman = dateTime.toLocaleString('en-US', {
+      month: 'long', // short or long
+      day: 'numeric',
+      year: 'numeric'
+    });
+    return dateHuman;
   },
 };

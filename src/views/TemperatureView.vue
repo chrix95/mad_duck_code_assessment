@@ -11,7 +11,7 @@
   </div>
   <div class="row justify-content-start">
     <div class="col-lg-12">
-      <Bottom-Card />
+      <Bottom-Card :days="city.days"/>
     </div>
   </div>
 </template>

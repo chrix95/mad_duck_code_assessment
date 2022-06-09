@@ -38,7 +38,7 @@ export default {
   methods: {
     async handleSubmit() {
       if (this.city) {
-        const urlParams = this.$globalFunc.getStaticURLParameters();
+        const urlParams = this.$globalFunc.getStaticURLParameters(false);
         const response = await WeatherHelper.getCity(this.city, urlParams);
         if (response.status) {
           this.showAlert("Success", `${this.$globalFunc.capitalizeFirstLetter(this.city)} has been added.`, "success");

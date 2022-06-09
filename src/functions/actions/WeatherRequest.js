@@ -7,7 +7,7 @@ export default {
     store.dispatch("setLoading", true);
     const response = WeatherService.getNext3DaysTemperature(payload)
       .then((result) => {
-        store.dispatch("updateCity", { ...result.data.days, id });
+        store.dispatch("updateCity", { days: result.data.days, id });
         return { status: true };
       })
       .catch((err) => {

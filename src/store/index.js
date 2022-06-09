@@ -23,7 +23,7 @@ export default createStore({
     },
     UPDATE_EXISTING_CITY(state, city) {
       const index = state.cities.findIndex(c => c.id === city.id);
-      state.cities[index] = { ...state.cities[index], ...city };
+      state.cities[index].days = city.days;
       localStorage.setItem('cities', JSON.stringify(state.cities));
     },
   },
