@@ -13,10 +13,21 @@ export default {
       return v.toString(16);
     });
   },
-  addApiKey(parameters) {
-    return {
-      access_key: process.env.VUE_APP_WEATHER_API_KEY,
-      ...parameters,
+  getStaticURLParameters(withHours = false) {
+    const params = {
+      key: process.env.VUE_APP_WEATHER_API_KEY,
+      unitGroup: "metric",
+      contentType: "json",
     };
+    if (withHours) {
+      params.include = "current%2Chours"
+    } else {
+      params.include = "current"
+    }
+    return params;
+  },
+  getNextNDate(num = 0) {
+    var nowDate = new Date();
+    return `${nowDate.getFullYear()}-${nowDate.getMonth() + 1}-${nowDate.getDate() + num}`;
   },
 };

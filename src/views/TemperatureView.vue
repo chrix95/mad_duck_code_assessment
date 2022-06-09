@@ -20,6 +20,7 @@
 import { mapState } from 'vuex';
 import TopCard from "@/components/Temperature/TopCard.vue";
 import BottomCard from "@/components/Temperature/BottomCard.vue";
+import WeatherHelper from "@/functions/actions/WeatherRequest";
 export default {
   name: "TemperaturView",
   computed: {
@@ -28,20 +29,20 @@ export default {
       return this.cities.find(city => city.id === this.id);
     },
     topParams() {
-      const { request: { query }, location: { name, lat, lon }, current: { feelslike, humidity, pressure, wind_speed, wind_dir, uv_index, temperature, weather_icons } } = this.city;
+      const { address, resolvedAddress, latitude, longitude, currentConditions: { feelslike, humidity, pressure, wind_speed, winddir, uvindex, temp, icon } } = this.city;
       return {
-        query,
-        name,
-        lat,
-        lon,
+        query: address,
+        name: resolvedAddress,
+        lat: latitude,
+        lon: longitude,
         feelslike,
         humidity,
         pressure,
         wind_speed,
-        wind_dir,
-        uv_index,
-        temperature,
-        weather_icons,
+        wind_dir: winddir,
+        uv_index: uvindex,
+        temperature: temp,
+        weather_icons: [icon],
       };
     },
   },
@@ -52,9 +53,37 @@ export default {
     },
   },
   components: { TopCard, BottomCard },
-  mounted() {},
-  data() {},
-  methods: {},
+  mounted() {
+    if (this.city) {
+      this.getNext3DaysTemperature();
+    }
+  },
+  data() {
+    return {}
+  },
+  methods: {
+    async getNext3DaysTemperature() {
+      if (this.city) {
+        const [ startDate, endDate ] = [this.$globalFunc.getNextNDate(1), this.$globalFunc.getNextNDate(3)];
+        const urlParams = this.$globalFunc.getStaticURLParameters(true);
+        const response = await WeatherHelper.getNext3DaysTemperature({ address: this.city.address, startDate, endDate, id: this.id, urlParams });
+        if (response.status) {
+          // 
+        } else {
+          this.showAlert("Error", `${response.message}`, "error");
+        }
+      } else {
+        this.showAlert("Validation Error", "Please enter a city name.", "warn");
+      }
+    },
+    showAlert(title, text, type) {
+      this.$notify({
+        title,
+        text,
+        type: type ? type : "warn",
+      });
+    }
+  },
 };
 </script>
 

@@ -21,6 +21,11 @@ export default createStore({
       state.cities = [...state.cities, city];
       localStorage.setItem('cities', JSON.stringify(state.cities));
     },
+    UPDATE_EXISTING_CITY(state, city) {
+      const index = state.cities.findIndex(c => c.id === city.id);
+      state.cities[index] = { ...state.cities[index], ...city };
+      localStorage.setItem('cities', JSON.stringify(state.cities));
+    },
   },
   actions: {
     setLoading({ commit }, type) {
@@ -31,6 +36,9 @@ export default createStore({
     },
     reloadCities({ commit }, payload) {
       commit("SET_EXISTING_CITIES", payload);
+    },
+    updateCity({ commit }, payload) {
+      commit("UPDATE_EXISTING_CITY", payload);
     },
   },
   modules: {

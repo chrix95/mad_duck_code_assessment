@@ -4,7 +4,7 @@
       <div class="col-12 col-md-4 col-lg-4 mb-1">
         <div class="left-card mb-2">
           <h3 class="card-title text-primary m-0">{{ info.name }}</h3>
-          <p class="sub-card-title text-grey f14 m-0 mt-1">{{ info.query }}</p>
+          <p class="sub-card-title text-grey f14 m-0 mt-1">{{ info.query && $globalFunc.capitalizeFirstLetter(info.query) }}</p>
           <p class="sub-card-title text-grey f14 m-0 mt_5">
             {{ info.lat }}° N, {{ info.lon }}° E
           </p>

@@ -38,8 +38,8 @@ export default {
   methods: {
     async handleSubmit() {
       if (this.city) {
-        const payload = this.$globalFunc.addApiKey({ query: this.city });
-        const response = await WeatherHelper.addCity(payload);
+        const urlParams = this.$globalFunc.getStaticURLParameters();
+        const response = await WeatherHelper.getCity(this.city, urlParams);
         if (response.status) {
           this.showAlert("Success", `${this.$globalFunc.capitalizeFirstLetter(this.city)} has been added.`, "success");
           this.city = "";

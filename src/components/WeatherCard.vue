@@ -1,9 +1,9 @@
 <template>
   <div class="weather-card text-center">
-    <h3 class="card-title text-primary m-0">{{ city.location && city.location.name }}</h3>
-    <p class="sub-card-title text-grey f14 m-0">{{ city.location && city.location.country }}</p>
+    <h3 class="card-title text-primary m-0">{{ city.address && $globalFunc.capitalizeFirstLetter(city.address) }}</h3>
+    <p class="sub-card-title text-grey f14 m-0">{{ city.resolvedAddress }}</p>
     <p class="temperature text-primary">
-      {{ city.current && city.current.temperature}}<sup>o</sup>C
+      {{ city.currentConditions && city.currentConditions.temp }}<sup>o</sup>C
     </p>
     <button type="button" class="btn btn-primary" @click.prevent="viewMoreInfo()">View City</button>
   </div>
@@ -23,7 +23,7 @@ export default {
       this.$router.push({
         name: "TemperatureInfo",
         params: {
-          city: (this.city.location.name).toLowerCase(),
+          city: (this.city.address).toLowerCase(),
           id: this.city.id,
         },
       });
