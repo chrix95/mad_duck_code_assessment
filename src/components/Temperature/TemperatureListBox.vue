@@ -4,7 +4,7 @@
       {{ getNum }}h
     </p>
     <img
-      src="https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0024_thunderstorms.png"
+      :src="getIcon"
       alt="weather icon"
       class="img-fluid d-flex mx-auto mb_5"
     />
@@ -30,6 +30,9 @@ export default {
     },
     getRandomTemp() {
       return this.item.temp;
+    },
+    getIcon() {
+      return this.item.icon && require(`@/assets/img/icons/${this.item.icon}.png`);
     },
   },
 };

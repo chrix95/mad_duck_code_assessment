@@ -13,7 +13,7 @@
       <div class="col-6 col-md-4 col-lg-4">
         <div class="center-card mb-1">
           <img
-            :src="info.weather_icons[0]"
+            :src="getIcon(info.weather_icons)"
             alt="weather icon"
             class="img-fluid d-flex"
           />
@@ -49,6 +49,11 @@ export default {
     info: {
       type: [Object],
       required: true,
+    },
+  },
+  methods: {
+    getIcon(icon) {
+      return require(`@/assets/img/icons/${icon}.png`);
     },
   },
 };

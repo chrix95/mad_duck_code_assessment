@@ -42,7 +42,7 @@ export default {
         wind_dir: winddir,
         uv_index: uvindex,
         temperature: temp,
-        weather_icons: [icon],
+        weather_icons: icon,
       };
     },
   },
