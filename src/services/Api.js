@@ -8,11 +8,6 @@ const instance = axios.create({
 
 // before a request is made start the nprogress
 instance.interceptors.request.use(config => {
-  // handle sending auth token to the server
-  // const token = JSON.parse(sessionStorage.getItem("token"));
-  // if (token) {
-  //   config.headers['Authorization'] =  `Bearer ${token}`;
-  // }
   return config;
 });
 

@@ -1,7 +1,7 @@
 <template>
-  <div class="row justify-content-center align-items-center g-0 height-100">
+  <div class="row justify-content-center align-items-center g-0">
     <div class="col-sm-10 col-lg-6">
-      <div class="d-flex flex-column justify-content-center h-100">
+      <div class="d-flex flex-column justify-content-center height-100">
         <h4 class="text-center">404 Not Found</h4>
         <p class="text-center">
           Oops! you seem lost, no worries we will handle the redirection to

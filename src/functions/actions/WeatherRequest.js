@@ -30,7 +30,6 @@ export default {
         return { status: true };
       })
       .catch((err) => {
-        console.log(err);
         if (err?.response === undefined) {
           return { status: false, message: 'Oops! took long to get a response' }
         } else {

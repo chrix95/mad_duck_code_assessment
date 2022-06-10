@@ -23,8 +23,6 @@ app.use(store);
 
 app.use(Notifications);
 
-app.config.globalProperties.$window = window;
-
 app.config.globalProperties.$globalFunc = globalFunc;
 
 app.mount("#app");
