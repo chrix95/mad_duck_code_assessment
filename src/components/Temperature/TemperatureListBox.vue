@@ -5,7 +5,7 @@
     </p>
     <img
       :src="getIcon"
-      alt="weather icon"
+      alt="icon"
       class="img-fluid d-flex mx-auto mb_5"
     />
     <p class="sub-card-title text-primary fw-bold f12 text-center m-0 mb_5">
