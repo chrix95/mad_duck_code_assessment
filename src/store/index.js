@@ -26,6 +26,10 @@ export default createStore({
       state.cities[index].days = city.days;
       localStorage.setItem('cities', JSON.stringify(state.cities));
     },
+    REMOVE_CITY(state, cityId) {
+      state.cities = state.cities.filter(city => city.id !== cityId);
+      localStorage.setItem('cities', JSON.stringify(state.cities));
+    },
   },
   actions: {
     setLoading({ commit }, type) {
@@ -39,6 +43,9 @@ export default createStore({
     },
     updateCity({ commit }, payload) {
       commit("UPDATE_EXISTING_CITY", payload);
+    },
+    removeCity({ commit }, cityId) {
+      commit("REMOVE_CITY", cityId);
     },
   },
   modules: {

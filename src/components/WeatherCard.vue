@@ -1,5 +1,6 @@
 <template>
   <div class="weather-card text-center">
+    <img src="@/assets/img/icons/close.png" alt="icon" class="close cursor-pointer" @click.prevent="removeCity()">
     <h3 class="card-title text-primary m-0">{{ city.address && $globalFunc.capitalizeFirstLetter(city.address) }}</h3>
     <p class="sub-card-title text-grey f14 m-0">{{ city.resolvedAddress }}</p>
     <p class="temperature text-primary">
@@ -28,6 +29,11 @@ export default {
         },
       });
     },
+    removeCity() {
+      if (confirm("Are you sure you want to remove this city?")) {
+        this.$store.dispatch("removeCity", this.city.id);
+      }
+    }
   },
 };
 </script>
