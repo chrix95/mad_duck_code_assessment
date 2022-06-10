@@ -10,7 +10,7 @@ yarn install
 4. To test the application you need to duplicate the `.env.sample` file and rename to `.env.development` and `.env.production` and set the following configurations based on the environemnt you are using.
 ```
 VUE_APP_WEATHER_API_URL="https://weather.visualcrossing.com/VisualCrossingWebServices/rest"
-VUE_APP_WEATHER_API_KEY=YOUR_WEATHER_STACK_API_KEY
+VUE_APP_WEATHER_API_KEY=YOUR_WEATHER_VISUAL_CROSSING_API_KEY
 ```
 5. Run the application using the code below
 ```
