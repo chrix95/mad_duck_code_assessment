@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     getIcon(icon) {
-      return require(`@/assets/img/icons/${icon}.png`);
+      return require(`@/assets/img/icons/${icon}@2x.png`);
     },
   },
 };
